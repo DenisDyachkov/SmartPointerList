@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <memory>
 #include <sstream>
@@ -11,35 +11,35 @@ template<typename T>
 class List;
 
 /**
-* @brief Опрератор сдвига.
-* @param os Поток вывода.
-* @param list Лист для вывода.
-* @return Изменённый поток вывода.
+* @brief РћРїСЂРµСЂР°С‚РѕСЂ СЃРґРІРёРіР°.
+* @param os РџРѕС‚РѕРє РІС‹РІРѕРґР°.
+* @param list Р›РёСЃС‚ РґР»СЏ РІС‹РІРѕРґР°.
+* @return РР·РјРµРЅС‘РЅРЅС‹Р№ РїРѕС‚РѕРє РІС‹РІРѕРґР°.
 */
 template<typename T>
 std::ostream& operator<< (std::ostream& os, const List<T>& list);
 
 /**
-@brief Перегрузка оператора равно
-@param rha Первый аргумент для сравнения
-@param lha Второй аргумент для сравнения
-@return false если равны и true если н ет
+@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЂР°РІРЅРѕ
+@param rha РџРµСЂРІС‹Р№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+@param lha Р’С‚РѕСЂРѕР№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+@return false РµСЃР»Рё СЂР°РІРЅС‹ Рё true РµСЃР»Рё РЅ РµС‚
 */
 template<typename T>
 bool operator==(const List<T>& rha, const List<T>& lha) noexcept;
 
 /**
-@brief Перегрузка оператора не равно
-@param rha Первый аргумент для сравнения
-@param lha Второй аргумент для сравнения
-@return true если равны и false если нет
+@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РЅРµ СЂР°РІРЅРѕ
+@param rha РџРµСЂРІС‹Р№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+@param lha Р’С‚РѕСЂРѕР№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+@return true РµСЃР»Рё СЂР°РІРЅС‹ Рё false РµСЃР»Рё РЅРµС‚
 */
 template<typename T>
 bool operator!=(const List<T>& rha, const List<T>& lha) noexcept;
 
 
 /*
-@brief Класс, описывающий линейный односвязный список
+@brief РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ Р»РёРЅРµР№РЅС‹Р№ РѕРґРЅРѕСЃРІСЏР·РЅС‹Р№ СЃРїРёСЃРѕРє
 */
 template<typename T>
 class List
@@ -47,81 +47,91 @@ class List
 public:
 
 	/*
-	* @brief  Создает новый "пустой" объект класса List
+	* @brief  РЎРѕР·РґР°РµС‚ РЅРѕРІС‹Р№ "РїСѓСЃС‚РѕР№" РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° List
 	*/
 	List();
 	
 	/*
-	* @brief  Создает новый объект класса List по данным
-	* @param list Данные листа
+	* @brief Р”РµСЃС‚СЂСѓРєС‚РѕСЂ, С‡РёСЃС‚РёС‚ РїР°РјСЏС‚СЊ
+	*/
+	~List();
+
+	/*
+	* @brief  РЎРѕР·РґР°РµС‚ РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° List РїРѕ РґР°РЅРЅС‹Рј
+	* @param list Р”Р°РЅРЅС‹Рµ Р»РёСЃС‚Р°
 	*/
 	List(const std::initializer_list<T> list);
 	
 	/*
-	* @brief Очистка списка
+	* @brief РћС‡РёСЃС‚РєР° СЃРїРёСЃРєР°
 	*/
 	void clear();
 
 	/*
-	* @brief Функция для преобразования списка в строку
-	* @return Строка, созданная по списку
+	* @brief Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ СЃРїРёСЃРєР° РІ СЃС‚СЂРѕРєСѓ
+	* @return РЎС‚СЂРѕРєР°, СЃРѕР·РґР°РЅРЅР°СЏ РїРѕ СЃРїРёСЃРєСѓ
 	*/
 	std::string to_string() const noexcept;
 	
 	/*
-	* @brief Добавляет элемент в начало списка
-	* @param value Значение
+	* @brief Р”РѕР±Р°РІР»СЏРµС‚ СЌР»РµРјРµРЅС‚ РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
+	* @param value Р—РЅР°С‡РµРЅРёРµ
 	*/
 	void push(const T& value);
 	
 	/*
-	* @brief Убирает элемент из начала списка
+	* @brief РЈР±РёСЂР°РµС‚ СЌР»РµРјРµРЅС‚ РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°
 	*/
 	void pop();
 	
 	/*
-	* @brief Проверяет наличие элемента в списке
-	* @return true - есть, иначе false
+	* @brief РџСЂРѕРІРµСЂСЏРµС‚ РЅР°Р»РёС‡РёРµ СЌР»РµРјРµРЅС‚Р° РІ СЃРїРёСЃРєРµ
+	* @return true - РµСЃС‚СЊ, РёРЅР°С‡Рµ false
 	*/
 	bool find(const T& item);
 
 	/*
-	* @brief Проверяет наличие элементов в списке
-	* @return true - есть элементы, иначе false
+	* @brief РџСЂРѕРІРµСЂСЏРµС‚ РЅР°Р»РёС‡РёРµ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃРїРёСЃРєРµ
+	* @return true - РµСЃС‚СЊ СЌР»РµРјРµРЅС‚С‹, РёРЅР°С‡Рµ false
 	*/
 	bool has_elements() const noexcept;
 	
 	/*
-	* @brief Проверяет отсутствие элементов в списке
-	* @return true - нет элементов, иначе false
+	* @brief РџСЂРѕРІРµСЂСЏРµС‚ РѕС‚СЃСѓС‚СЃС‚РІРёРµ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃРїРёСЃРєРµ
+	* @return true - РЅРµС‚ СЌР»РµРјРµРЅС‚РѕРІ, РёРЅР°С‡Рµ false
 	*/
 	bool is_empty() const noexcept;
 
 	/*
-	* @brief Перегрузка оператора копирования
-	* @param list Список для копирования
-	* @return Скопированный объект типа List
+	* @brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	* @param list РЎРїРёСЃРѕРє РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	* @return РЎРєРѕРїРёСЂРѕРІР°РЅРЅС‹Р№ РѕР±СЉРµРєС‚ С‚РёРїР° List
 	*/
-	List<T>& operator=(const List<T>& list);
+	List<T>& operator=(const List<T>& list) = default;
 
 	/*
-	* @brief Перегрузка оператора перемещения
-	* @param list Список для перемещения
-	* @return Перемещенный объект типа List
+	* @brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїРµСЂРµРјРµС‰РµРЅРёСЏ
+	* @param list РЎРїРёСЃРѕРє РґР»СЏ РїРµСЂРµРјРµС‰РµРЅРёСЏ
+	* @return РџРµСЂРµРјРµС‰РµРЅРЅС‹Р№ РѕР±СЉРµРєС‚ С‚РёРїР° List
 	*/
-	List<T>& operator=(List<T>&& list) noexcept;
+	List<T>& operator=(List<T>&& list) = default;
 
 	/*
-	* @brief Конструктор копирования
-	* @param list Список для копирования
+	* @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	* @param list РЎРїРёСЃРѕРє РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	*/
-	List(const List<T>& list);
+	List(const List<T>& list) = default;
 
 	/*
-	* @brief Конструктор перемещения
-	* @param list Список для перемещения
+	* @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
+	* @param list РЎРїРёСЃРѕРє РґР»СЏ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 	*/
-	List(List<T>&& list) noexcept;
+	List(List<T>&& list) = default;
+
+	/*
+	* @brief РџРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РёР· РіРѕР»РѕРІС‹ СЃРїРёСЃРєР°
+	*/
+	T peek();
 
 private:
 	std::unique_ptr<Node<T>> head;
@@ -133,6 +143,16 @@ template<typename T>
 inline List<T>::List()
 	:head(nullptr)
 {
+}
+
+template<typename T>
+inline List<T>::~List()
+{
+	while (head)
+	{
+		auto next = std::move(head->next_node);
+		head = std::move(next);
+	}
 }
 
 template<typename T>
@@ -226,64 +246,22 @@ inline bool List<T>::is_empty() const noexcept
 }
 
 template<typename T>
-inline List<T>& List<T>::operator=(const List<T>& list)
+inline T List<T>::peek()
 {
-	this->clear();
-	if (*this != list) 
-	{
-		List temp{ list };
-		std::swap(this->head, temp.head);
-	}
-	return *this;
-}
-
-template<typename T>
-inline List<T>& List<T>::operator=(List<T>&& list) noexcept
-{
-	if (*this != list)
-	{
-		std::swap(this->head, list.head);
-	}
-	return *this;
-}
-
-template<typename T>
-inline List<T>::List(const List<T>& list)
-	:head(nullptr)
-{
-	List<T> temp;
-	std::vector<T> invetred;
-	for (auto node = list.head.get(); node != nullptr; node = node->next_node.get())
-	{
-		invetred.insert(invetred.begin(), node->value);
-	}
-
-	for (size_t i = 0; i < invetred.size(); i++)
-	{
-		temp.push(invetred[i]);
-	}
-	std::swap(this->head, temp.head);
-}
-
-
-template<typename T>
-inline List<T>::List(List<T>&& list) noexcept
-	:head(nullptr)
-{
-	std::swap(this->head, list.head);
+	return this->head.get()->value;
 }
 
 /*
-* @brief Класс, описывающий элемент списка
+* @brief РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°
 */
 template<typename T>
 class Node
 {
 public:
 	/*
-	@brief  Инициализирует новый экземпляр класса Node
-	@param value Значение элемента
-	@param next_node Следующий элемент
+	@brief  РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РЅРѕРІС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° Node
+	@param value Р—РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
+	@param next_node РЎР»РµРґСѓСЋС‰РёР№ СЌР»РµРјРµРЅС‚
 	*/
 	Node(T value);
 
